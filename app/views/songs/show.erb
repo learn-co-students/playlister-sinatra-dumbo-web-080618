@@ -1,4 +1,4 @@
-
+hi
 <%=@song.name%>
-<a href= "/artists/<%=@song.artist.slug%>"><%= @song.artist %></a>
-<!-- <a href= "/genres/<%=@song.genre.slug%>"><%= @song.genre %></a> -->
+<a href= "/artists/<%=@song.artist.slug%>"><%= @song.artist.name %></a>
+<a href= "/genres/<%=@song.song_genre.slug%>"><%= @song.song_genre.name %></a>
