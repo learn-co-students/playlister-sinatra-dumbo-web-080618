@@ -43,10 +43,11 @@ use Rack::Flash
 
   patch "/songs/:slug" do
 
-    # @song = Song.find_by_slug(params["slug"])
-    # @song.update(name: params["song_name"])
-    # @song.artist.name = params["Artist Name"]
-    # @song.save
+    @song = Song.find_by_slug(params["slug"])
+    @song.update(name: params["song_name"])
+    @artist = @song.artist
+    @artist.update(name: params["Artist Name"])
+    @song.save
 
 
     flash[:message] = "Successfully updated song."
