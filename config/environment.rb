@@ -12,6 +12,11 @@ ActiveRecord::Base.establish_connection(
 
 require_all 'app'
 require_all 'lib'
+
+enable :sessions
+require 'sinatra/base'
+require 'rack-flash'
+
 # abc = Artist.new("abc")
 # abc.slug
 #

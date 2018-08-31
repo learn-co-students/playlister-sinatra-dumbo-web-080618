@@ -4,10 +4,10 @@ class Artist < ActiveRecord::Base
   has_many :genres, through: :songs
 
   def slug
-    name.downcase.gsub(" ", "-")
+    self.name.gsub(" ", "-").downcase
   end
 
   def self.find_by_slug(slug)
-    Artist.find { |s| s.slug == slug }
+    self.all.find { |s| s.slug == slug }
   end
 end
